@@ -1,3 +1,6 @@
+import 'package:budgeting_app/core/theme/theme.dart';
+import 'package:budgeting_app/features/authentication/presentation/pages/sign_in_page.dart';
+import 'package:budgeting_app/features/authentication/presentation/pages/sign_up_page.dart';
 import 'package:budgeting_app/features/landing/landing.dart';
 import 'package:flutter/material.dart';
 
@@ -11,12 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const LandingPage(),
+      theme: AppTheme.primaryTheme,
+      home: const SignInPage(),
     );
   }
 }
