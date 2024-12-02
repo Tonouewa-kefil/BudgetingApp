@@ -1,7 +1,5 @@
 import 'package:budgeting_app/core/theme/theme.dart';
-import 'package:budgeting_app/features/authentication/presentation/pages/sign_in_page.dart';
-import 'package:budgeting_app/features/authentication/presentation/pages/sign_up_page.dart';
-import 'package:budgeting_app/features/landing/landing.dart';
+import 'package:budgeting_app/features/authentication/presentation/pages/enter_passcode_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.primaryTheme,
-      home: const SignInPage(),
+      home: const EnterPasscodePage(),
     );
   }
 }

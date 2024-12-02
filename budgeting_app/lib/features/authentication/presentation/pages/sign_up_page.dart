@@ -1,7 +1,7 @@
 import 'package:budgeting_app/core/theme/app_colors.dart';
 import 'package:budgeting_app/features/authentication/presentation/pages/sign_in_page.dart';
 import 'package:budgeting_app/features/authentication/presentation/widgets/authentication_textfield.dart';
-import 'package:budgeting_app/features/authentication/presentation/widgets/authentication_button.dart';
+import 'package:budgeting_app/features/authentication/presentation/widgets/authetication_button.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -90,7 +90,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 obscure: true,
                 controller: passwordConfirmationController,
               ),
-              const SizedBox(height: 45),
+              const SizedBox(height: 20),
               const AuthenticationButton(
                 buttonText: "Sign Up",
               ),

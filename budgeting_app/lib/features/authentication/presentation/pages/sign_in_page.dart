@@ -1,7 +1,8 @@
 import 'package:budgeting_app/core/theme/app_colors.dart';
+import 'package:budgeting_app/features/authentication/presentation/pages/forgot_password_page.dart';
 import 'package:budgeting_app/features/authentication/presentation/pages/sign_up_page.dart';
 import 'package:budgeting_app/features/authentication/presentation/widgets/authentication_textfield.dart';
-import 'package:budgeting_app/features/authentication/presentation/widgets/authentication_button.dart';
+import 'package:budgeting_app/features/authentication/presentation/widgets/authetication_button.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatefulWidget {
@@ -52,7 +53,7 @@ class _SignInPageState extends State<SignInPage> {
                 obscure: true,
                 controller: passwordController,
               ),
-              const SizedBox(height: 45),
+              const SizedBox(height: 20),
               const AuthenticationButton(
                 buttonText: "Sign In",
               ),
@@ -60,7 +61,8 @@ class _SignInPageState extends State<SignInPage> {
                 height: 20,
               ),
               GestureDetector(
-                onTap: () => {},
+                onTap: () =>
+                    {Navigator.push(context, ForgotPasswordPage.route())},
                 child: RichText(
                     text: TextSpan(
                         text: 'Forgort Password?',
