@@ -1,9 +1,11 @@
 import 'package:budgeting_app/core/theme/app_colors.dart';
+import 'package:budgeting_app/features/authentication/presentation/pages/sign_up_page.dart';
 import 'package:budgeting_app/features/authentication/presentation/widgets/authentication_textfield.dart';
-import 'package:budgeting_app/features/authentication/presentation/widgets/authetication_button.dart';
+import 'package:budgeting_app/features/authentication/presentation/widgets/authentication_button.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatefulWidget {
+  static route() => (builder: (context) => const SignUpPage());
   const SignInPage({super.key});
 
   @override
@@ -57,28 +59,40 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(
                 height: 20,
               ),
-              RichText(
-                  text: TextSpan(
-                      text: 'Forgort Password?',
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: AppColor.sblue, fontWeight: FontWeight.bold))),
+              GestureDetector(
+                onTap: () => {},
+                child: RichText(
+                    text: TextSpan(
+                        text: 'Forgort Password?',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium
+                            ?.copyWith(
+                                color: AppColor.sblue,
+                                fontWeight: FontWeight.bold))),
+              ),
               const SizedBox(
                 height: 10,
               ),
-              RichText(
-                text: TextSpan(
-                    text: 'Don\'t have an Account? ',
-                    style: Theme.of(context).textTheme.titleMedium,
-                    children: [
-                      TextSpan(
-                          text: "Sign Up",
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium
-                              ?.copyWith(
-                                  color: AppColor.sblue,
-                                  fontWeight: FontWeight.bold))
-                    ]),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, SignUpPage.route());
+                },
+                child: RichText(
+                  text: TextSpan(
+                      text: 'Don\'t have an Account? ',
+                      style: Theme.of(context).textTheme.titleMedium,
+                      children: [
+                        TextSpan(
+                            text: "Sign Up",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(
+                                    color: AppColor.sblue,
+                                    fontWeight: FontWeight.bold))
+                      ]),
+                ),
               )
             ],
           ),
