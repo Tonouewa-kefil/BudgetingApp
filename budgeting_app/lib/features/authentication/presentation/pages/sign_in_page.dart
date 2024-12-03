@@ -6,7 +6,7 @@ import 'package:budgeting_app/features/authentication/presentation/widgets/authe
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatefulWidget {
-  static route() => (builder: (context) => const SignUpPage());
+  static route() => MaterialPageRoute(builder: (context) => const SignInPage());
   const SignInPage({super.key});
 
   @override
