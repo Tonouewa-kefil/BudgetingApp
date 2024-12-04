@@ -1,8 +1,10 @@
 import 'package:budgeting_app/core/theme/app_colors.dart';
+import 'package:budgeting_app/features/authentication/bloc/authentication_bloc.dart';
 import 'package:budgeting_app/features/authentication/presentation/pages/sign_in_page.dart';
 import 'package:budgeting_app/features/authentication/presentation/widgets/authentication_textfield.dart';
 import 'package:budgeting_app/features/authentication/presentation/widgets/authetication_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpPage extends StatefulWidget {
   static route() => MaterialPageRoute(builder: (context) => const SignUpPage());
@@ -91,8 +93,17 @@ class _SignUpPageState extends State<SignUpPage> {
                 controller: passwordConfirmationController,
               ),
               const SizedBox(height: 20),
-              const AuthenticationButton(
+              AuthenticationButton(
                 buttonText: "Sign Up",
+                onPressd: () {
+                  if (formKey.currentState!.validate()) {
+                    context.read<AuthenticationBloc>().add(AuthenticationSignUp(
+                        firstName: firstNameController.text.trim(),
+                        lastName: lastNameController.text.trim(),
+                        email: emailController.text.trim(),
+                        password: passwordController.text.trim()));
+                  }
+                },
               ),
               const SizedBox(
                 height: 20,

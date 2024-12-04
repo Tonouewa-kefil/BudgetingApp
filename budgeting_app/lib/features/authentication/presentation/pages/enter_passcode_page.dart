@@ -47,8 +47,9 @@ class _EnterPasscodePageState extends State<EnterPasscodePage> {
                 controller: passcodeController,
               ),
               const SizedBox(height: 20),
-              const AuthenticationButton(
+              AuthenticationButton(
                 buttonText: "Submit",
+                onPressd: () {},
               ),
             ],
           ),

@@ -54,8 +54,9 @@ class _SignInPageState extends State<SignInPage> {
                 controller: passwordController,
               ),
               const SizedBox(height: 20),
-              const AuthenticationButton(
+              AuthenticationButton(
                 buttonText: "Sign In",
+                onPressd: () {},
               ),
               const SizedBox(
                 height: 20,

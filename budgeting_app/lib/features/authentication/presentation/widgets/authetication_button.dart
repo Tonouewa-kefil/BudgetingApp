@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 
 class AuthenticationButton extends StatelessWidget {
   final String buttonText;
-  const AuthenticationButton({super.key, required this.buttonText});
+  final VoidCallback onPressd;
+  const AuthenticationButton(
+      {super.key, required this.buttonText, required this.onPressd});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class AuthenticationButton extends StatelessWidget {
               end: Alignment.topRight),
           borderRadius: BorderRadius.circular(10)),
       child: ElevatedButton(
-        onPressed: () => {},
+        onPressed: () => {onPressd},
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           fixedSize: const Size(390, 50),

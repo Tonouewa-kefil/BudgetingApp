@@ -53,7 +53,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               const SizedBox(
                 height: 20,
               ),
-              const AuthenticationButton(buttonText: "Reset Password"),
+              AuthenticationButton(
+                  buttonText: "Reset Password", onPressd: () {}),
               const SizedBox(
                 height: 20,
               ),
