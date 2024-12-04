@@ -1,7 +1,7 @@
 import 'package:budgeting_app/core/theme/error/failure.dart';
 import 'package:budgeting_app/core/usecase/usecase.dart';
 import 'package:budgeting_app/features/authentication/domain/repository/authentication_repository.dart';
-import 'package:fpdart/src/either.dart';
+import 'package:fpdart/fpdart.dart';
 
 class UserSignUp implements UseCase<String, UserSignUpParameters> {
   final AuthenticationRepository authenticationRepository;

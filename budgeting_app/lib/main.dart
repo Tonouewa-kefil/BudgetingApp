@@ -11,7 +11,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final superbase = await Supabase.initialize(
+  final supabase = await Supabase.initialize(
       url: SupabaseKeys.url, anonKey: SupabaseKeys.anonKey);
   runApp(MultiBlocProvider(
     providers: [
@@ -20,7 +20,7 @@ void main() async {
                 userSignUp: UserSignUp(
                   AthenticationRepositoryImplementation(
                     AuthenticationDataSourceImplemantation(
-                      superbase.client,
+                      supabase.client,
                     ),
                   ),
                 ),

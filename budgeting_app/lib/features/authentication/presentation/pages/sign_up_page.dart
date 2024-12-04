@@ -102,7 +102,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         lastName: lastNameController.text.trim(),
                         email: emailController.text.trim(),
                         password: passwordController.text.trim()));
-                  }
+                  } else {}
                 },
               ),
               const SizedBox(

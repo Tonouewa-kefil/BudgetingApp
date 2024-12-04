@@ -9,7 +9,7 @@ class AthenticationRepositoryImplementation
   final AuthenticationRemoteDataSource remoteDataSource;
   AthenticationRepositoryImplementation(this.remoteDataSource);
   @override
-  Future<Either<Failure, String>> signIp(
+  Future<Either<Failure, String>> signIn(
       {required String email, required String password}) async {
     try {
       final userId =

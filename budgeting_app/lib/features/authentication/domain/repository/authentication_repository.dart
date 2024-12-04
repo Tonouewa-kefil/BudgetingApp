@@ -8,7 +8,7 @@ abstract interface class AuthenticationRepository {
     required String email,
     required String password,
   });
-  Future<Either<Failure, String>> signIp({
+  Future<Either<Failure, String>> signIn({
     required String email,
     required String password,
   });
