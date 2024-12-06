@@ -14,10 +14,10 @@ abstract interface class AuthenticationRemoteDataSource {
   });
 }
 
-class AuthenticationDataSourceImplemantation
+class AuthenticationRemoteDataSourceImplemantation
     implements AuthenticationRemoteDataSource {
   final SupabaseClient supabaseClient;
-  AuthenticationDataSourceImplemantation(this.supabaseClient);
+  AuthenticationRemoteDataSourceImplemantation(this.supabaseClient);
 
   @override
   Future<String> signIn(
@@ -44,7 +44,7 @@ class AuthenticationDataSourceImplemantation
       final response = await supabaseClient.auth.signUp(
           email: email,
           password: password,
-          data: {'firstName': firstName, 'lastNam e': lastName});
+          data: {'firstName': firstName, 'lastName': lastName});
       if (response.user == null) {
         throw const ServerExcption('User is null!');
       }

@@ -4,10 +4,10 @@ import 'package:budgeting_app/features/authentication/data/datasources/authentic
 import 'package:budgeting_app/features/authentication/domain/repository/authentication_repository.dart';
 import 'package:fpdart/fpdart.dart';
 
-class AthenticationRepositoryImplementation
+class AuthenticationRepositoryImplementation
     implements AuthenticationRepository {
   final AuthenticationRemoteDataSource remoteDataSource;
-  AthenticationRepositoryImplementation(this.remoteDataSource);
+  AuthenticationRepositoryImplementation(this.remoteDataSource);
   @override
   Future<Either<Failure, String>> signIn(
       {required String email, required String password}) async {

@@ -19,8 +19,8 @@ Future<void> main() async {
       BlocProvider(
           create: (_) => AuthenticationBloc(
                 userSignUp: UserSignUp(
-                  AthenticationRepositoryImplementation(
-                    AuthenticationDataSourceImplemantation(
+                  AuthenticationRepositoryImplementation(
+                    AuthenticationRemoteDataSourceImplemantation(
                       supabase.client,
                     ),
                   ),

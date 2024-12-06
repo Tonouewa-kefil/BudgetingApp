@@ -5,6 +5,7 @@ import 'package:budgeting_app/features/authentication/presentation/widgets/authe
 import 'package:budgeting_app/features/authentication/presentation/widgets/authetication_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'dart:developer';
 
 class SignUpPage extends StatefulWidget {
   static route() => MaterialPageRoute(builder: (context) => const SignUpPage());
@@ -94,14 +95,14 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               const SizedBox(height: 20),
               AuthenticationButton(
-                buttonText: "Sign Up",
+                buttonText: "Register",
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     context.read<AuthenticationBloc>().add(AuthenticationSignUp(
-                        firstName: firstNameController.text.trim(),
-                        lastName: lastNameController.text.trim(),
-                        email: emailController.text.trim(),
-                        password: passwordController.text.trim()));
+                        firstName: firstNameController.text,
+                        lastName: lastNameController.text,
+                        email: emailController.text,
+                        password: passwordController.text));
                   }
                 },
               ),

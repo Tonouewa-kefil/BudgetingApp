@@ -17,7 +17,7 @@ class AuthenticationButton extends StatelessWidget {
               end: Alignment.topRight),
           borderRadius: BorderRadius.circular(10)),
       child: ElevatedButton(
-        onPressed: () => {onPressed},
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           fixedSize: const Size(390, 50),
