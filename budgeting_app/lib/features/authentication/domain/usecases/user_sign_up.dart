@@ -21,6 +21,7 @@ class UserSignUpParameters {
   final String lastName;
   final String email;
   final String password;
+
   UserSignUpParameters(
       {required this.firstName,
       required this.lastName,

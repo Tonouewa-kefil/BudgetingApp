@@ -55,7 +55,7 @@ class _PasswordCreationPageState extends State<PasswordCreationPage> {
               const SizedBox(height: 20),
               AuthenticationButton(
                 buttonText: "Submit",
-                onPressd: () {},
+                onPressed: () {},
               ),
               const SizedBox(
                 height: 20,

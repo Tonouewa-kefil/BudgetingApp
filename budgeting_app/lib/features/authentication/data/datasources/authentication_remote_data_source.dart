@@ -26,7 +26,7 @@ class AuthenticationDataSourceImplemantation
       final response = await supabaseClient.auth
           .signInWithPassword(password: password, email: email);
       if (response.user == null) {
-        throw const ServerExcption('User is null!');
+        throw const ServerExcption('Password and or email not correct');
       }
       return response.user!.id;
     } catch (e) {
@@ -42,9 +42,9 @@ class AuthenticationDataSourceImplemantation
       required String password}) async {
     try {
       final response = await supabaseClient.auth.signUp(
-          password: password,
           email: email,
-          data: {'first name': firstName, 'last name': lastName});
+          password: password,
+          data: {'firstName': firstName, 'lastNam e': lastName});
       if (response.user == null) {
         throw const ServerExcption('User is null!');
       }

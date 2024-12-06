@@ -13,7 +13,7 @@ class AuthenticationBloc
   })  : _userSignUp = userSignUp,
         super(AuthenticationInitial()) {
     on<AuthenticationSignUp>((event, emit) async {
-      final response = await userSignUp(UserSignUpParameters(
+      final response = await _userSignUp(UserSignUpParameters(
           firstName: event.firstName,
           lastName: event.lastName,
           email: event.email,

@@ -1,5 +1,5 @@
 import 'package:budgeting_app/core/theme/app_colors.dart';
-import 'package:budgeting_app/features/authentication/bloc/authentication_bloc.dart';
+import 'package:budgeting_app/features/authentication/presentation/bloc/authentication_bloc.dart';
 import 'package:budgeting_app/features/authentication/presentation/pages/sign_in_page.dart';
 import 'package:budgeting_app/features/authentication/presentation/widgets/authentication_textfield.dart';
 import 'package:budgeting_app/features/authentication/presentation/widgets/authetication_button.dart';
@@ -95,14 +95,14 @@ class _SignUpPageState extends State<SignUpPage> {
               const SizedBox(height: 20),
               AuthenticationButton(
                 buttonText: "Sign Up",
-                onPressd: () {
+                onPressed: () {
                   if (formKey.currentState!.validate()) {
                     context.read<AuthenticationBloc>().add(AuthenticationSignUp(
                         firstName: firstNameController.text.trim(),
                         lastName: lastNameController.text.trim(),
                         email: emailController.text.trim(),
                         password: passwordController.text.trim()));
-                  } else {}
+                  }
                 },
               ),
               const SizedBox(

@@ -56,7 +56,7 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(height: 20),
               AuthenticationButton(
                 buttonText: "Sign In",
-                onPressd: () {},
+                onPressed: () {},
               ),
               const SizedBox(
                 height: 20,

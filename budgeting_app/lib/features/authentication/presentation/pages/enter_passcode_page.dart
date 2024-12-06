@@ -49,7 +49,7 @@ class _EnterPasscodePageState extends State<EnterPasscodePage> {
               const SizedBox(height: 20),
               AuthenticationButton(
                 buttonText: "Submit",
-                onPressd: () {},
+                onPressed: () {},
               ),
             ],
           ),
