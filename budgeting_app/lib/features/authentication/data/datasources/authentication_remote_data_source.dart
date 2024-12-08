@@ -1,14 +1,15 @@
 import 'package:budgeting_app/core/theme/error/excpetions.dart';
+import 'package:budgeting_app/features/authentication/data/models/user_models.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 abstract interface class AuthenticationRemoteDataSource {
-  Future<String> signUp({
+  Future<UserModel> signUp({
     required String firstName,
     required String lastName,
     required String email,
     required String password,
   });
-  Future<String> signIn({
+  Future<UserModel> signIn({
     required String email,
     required String password,
   });
@@ -20,7 +21,7 @@ class AuthenticationRemoteDataSourceImplemantation
   AuthenticationRemoteDataSourceImplemantation(this.supabaseClient);
 
   @override
-  Future<String> signIn(
+  Future<UserModel> signIn(
       {required String email, required String password}) async {
     try {
       final response = await supabaseClient.auth
@@ -28,14 +29,14 @@ class AuthenticationRemoteDataSourceImplemantation
       if (response.user == null) {
         throw const ServerExcption('Password and or email not correct');
       }
-      return response.user!.id;
+      return UserModel.fromJson(response.user!.toJson());
     } catch (e) {
       throw ServerExcption(e.toString());
     }
   }
 
   @override
-  Future<String> signUp(
+  Future<UserModel> signUp(
       {required String firstName,
       required String lastName,
       required String email,
@@ -48,7 +49,7 @@ class AuthenticationRemoteDataSourceImplemantation
       if (response.user == null) {
         throw const ServerExcption('User is null!');
       }
-      return response.user!.id;
+      return UserModel.fromJson(response.user!.toJson());
     } catch (e) {
       throw ServerExcption(e.toString());
     }

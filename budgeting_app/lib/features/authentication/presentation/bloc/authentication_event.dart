@@ -15,3 +15,10 @@ final class AuthenticationSignUp extends AuthenticationEvent {
       required this.email,
       required this.password});
 }
+
+final class AuthenticationSignIn extends AuthenticationEvent {
+  final String email;
+  final String password;
+
+  AuthenticationSignIn({required this.email, required this.password});
+}

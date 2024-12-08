@@ -1,13 +1,14 @@
 import 'package:budgeting_app/core/theme/error/failure.dart';
 import 'package:budgeting_app/core/usecase/usecase.dart';
+import 'package:budgeting_app/features/authentication/domain/entities/user.dart';
 import 'package:budgeting_app/features/authentication/domain/repository/authentication_repository.dart';
 import 'package:fpdart/fpdart.dart';
 
-class UserSignUp implements UseCase<String, UserSignUpParameters> {
+class UserSignUp implements UseCase<User, UserSignUpParameters> {
   final AuthenticationRepository authenticationRepository;
   const UserSignUp(this.authenticationRepository);
   @override
-  Future<Either<Failure, String>> call(UserSignUpParameters parameters) async {
+  Future<Either<Failure, User>> call(UserSignUpParameters parameters) async {
     return await authenticationRepository.signUp(
         firstName: parameters.firstName,
         lastName: parameters.lastName,

@@ -7,9 +7,9 @@ final class AuthenticationInitial extends AuthenticationState {}
 
 final class AuthenticationLoading extends AuthenticationState {}
 
-final class AuthenticationSucces extends AuthenticationState {
-  final String uid;
-  AuthenticationSucces(this.uid);
+final class AuthenticationSuccess extends AuthenticationState {
+  final User user;
+  AuthenticationSuccess(this.user);
 }
 
 final class AuthenticationFailure extends AuthenticationState {
